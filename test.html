@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Store</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    
+    <style>
+        /* Import Google Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+/* Typography */
+h1 { font-size: 50px; line-height: 64px; color: #222; }
+h2 { font-size: 46px; line-height: 54px; color: #222; }
+h4 { font-size: 20px; line-height: 54px; color: #222; }
+p { font-size: 16px; color: #465b52; margin: 15px 0 20px 0; }
+
+/* Header */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f2f4fb;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo {
+    width: 150px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#navbar li {
+    list-style: none;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: royalblue;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: royalblue;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mobile Menu */
+#mobile-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 90vh;
+  background: url(./image/close-up-clock-with-time-change.jpg) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  margin-left: 80px;
+  color: white;
+}
+
+.hero-content h4 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  margin: 10px 0;
+  color: #4f7cff;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #ddd;
+}
+
+.hero-content button {
+  background: #4f7cff;
+  color: white;
+  padding: 14px 36px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.hero-content button:hover {
+  background: #355ad8;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    #navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #E3E6F3;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    #navbar.active {
+        display: flex;
+    }
+
+    #navbar li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #mobile-menu {
+        display: block;
+    }
+
+    #hero {
+        padding: 0 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    #hero h1, #hero h2, #hero h4 {
+        line-height: normal;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Header / Navbar -->
+<header id="header">
+  <div class="header-container">
+    <a href="#" class="logo">
+      <img src="./image/logome.png" alt="PayBudz logo" height="70px">
+    </a>
+
+    <nav>
+      <ul id="navbar">
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="cart">
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h4>Trade-in Offer</h4>
+    <h1>Super Value Deals</h1>
+    <p>On all products — save up to 70% off</p>
+    <button>Shop Now</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
