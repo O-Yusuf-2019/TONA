@@ -3,63 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My E-commerce Store</title>
-    
-    <!-- Google Fonts -->
+    <title>index.html</title>
+     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+   <!-- <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/> -->
+
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ============ CSS VARIABLES FOR THEMES ============ */
+:root {
+    /* 🌞 Light Mode (Default) */
+    --body-bg: #ffffff;
+    --text-primary: #222222;
+    --text-secondary: #465b52;
+    --text-light: #818ea0;
+    --header-bg: #E3E6F3;
+    --header-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    --card-bg: #ffffff;
+    --card-border: #cce7d0;
+    --card-shadow: 20px 20px 30px rgba(0,0,0,0.05);
+    --card-shadow-hover: 20px 20px 30px rgba(0,0,0,0.06);
+    --accent-color: royalblue;
+    --accent-hover: #355ad8;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --button-white-bg: transparent;
+    --button-white-border: #ffffff;
+    --input-bg: #f5f5f5;
+    --input-border: transparent;
+    --footer-bg: #ffffff;
+    --newsletter-bg: #041e42;
+    --newsletter-text: #818ea0;
+    --star-color: rgb(243, 181, 25);
+    --fe-box-bg-1: whitesmoke;
+    --fe-box-bg-2: royalblue;
+    --fe-box-bg-3: greenyellow;
+    --fe-box-bg-4: gold;
+    --fe-box-bg-5: coral;
+    --fe-box-bg-6: goldenrod;
+    --fe-box-text: royalblue;
+    --cart-btn-bg: #e8f6ea;
+    --cart-btn-text: royalblue;
+    --mobile-menu-bg: #E3E6F3;
+    --mobile-icon-color: #1a1a1a;
+    --link-color: #222222;
+    --link-hover: royalblue;
+    --hero-overlay-text: #ffffff;
+    --banner-span: crimson;
+    --highlight-yellow: #ffbd27;
+    --transition: 0.3s ease;
+    --hero-bg-light: url(./image/close-up-clock-with-time-change.jpg);
+--hero-bg-dark: url(./image/whitebghero.jpg);
     
-    <style>
-        /* Import Google Fonts */
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+    --body-bg: #121212;
+    --text-primary: #f5f5f5;
+    --text-secondary: #b0b0b0;
+    --text-light: #888888;
+    --header-bg: #1e1e1e;
+    --header-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    --card-bg: #1e1e1e;
+    --card-border: #333333;
+    --card-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+    --card-shadow-hover: 20px 20px 30px rgba(0,0,0,0.3);
+    --accent-color: #6366f1;
+    --accent-hover: #4f46e5;
+    --button-bg: #2a2a2a;
+    --button-text: #f5f5f5;
+    --button-white-bg: transparent;
+    --button-white-border: #555555;
+    --input-bg: #2a2a2a;
+    --input-border: #444444;
+    --footer-bg: #1a1a1a;
+    --newsletter-bg: #0a2a5e;
+    --newsletter-text: #a0a0a0;
+    --star-color: rgb(255, 214, 102);
+    --fe-box-bg-1: #2a2a2a;
+    --fe-box-bg-2: #4f46e5;
+    --fe-box-bg-3: #84cc16;
+    --fe-box-bg-4: #fbbf24;
+    --fe-box-bg-5: #f97316;
+    --fe-box-bg-6: #f59e0b;
+    --fe-box-text: #93c5fd;
+    --cart-btn-bg: #1e3a2a;
+    --cart-btn-text: #6366f1;
+    --mobile-menu-bg: #1e1e1e;
+    --mobile-icon-color: #f5f5f5;
+    --link-color: #f5f5f5;
+    --link-hover: #6366f1;
+    --hero-overlay-text: #ffffff;
+    --banner-span: #f87171;
+    --highlight-yellow: #fcd34d;
+    --transition: 0.3s ease;
+    --hero-bg-light: url(./image/close-up-clock-with-time-change.jpg);
+--hero-bg-dark: url(./image/whitebghero.jpg);
+}
+
+/* ============ BASE RESET & TYPOGRAPHY ============ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'League Spartan', 'Poppins', sans-serif;
+    font-family: 'Spartan', sans-serif;
 }
 
 body {
     width: 100%;
+    background-color: var(--body-bg);
+    color: var(--text-primary);
+    transition: background-color var(--transition), color var(--transition);
 }
 
-/* Typography */
-h1 { font-size: 50px; line-height: 64px; color: #222; }
-h2 { font-size: 46px; line-height: 54px; color: #222; }
-h4 { font-size: 20px; line-height: 54px; color: #222; }
-p { font-size: 16px; color: #465b52; margin: 15px 0 20px 0; }
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: var(--text-primary);
+    transition: color var(--transition);
+}
 
-/* Header */
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: var(--text-primary);
+    transition: color var(--transition);
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 54px;
+    color: var(--text-primary);
+    transition: color var(--transition);
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin: 15px 0 20px 0;
+    transition: color var(--transition);
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+/* ============ BUTTONS ============ */
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: var(--button-text);
+    background-color: var(--button-bg);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+}
+
+button.normal:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: var(--button-white-bg);
+    border: 1px solid var(--button-white-border);
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition);
+}
+
+button.white:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* ============ HEADER & NAVIGATION ============ */
 #header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #f2f4fb;
-}
-
-.header-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 10px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-.logo {
-    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 60px;
+    background-color: var(--header-bg);
+    box-shadow: var(--header-shadow);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition: background-color var(--transition), box-shadow var(--transition);
 }
 
 #navbar {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
 }
 
 #navbar li {
     list-style: none;
+    padding: 0 20px;
     position: relative;
 }
 
@@ -67,168 +229,1259 @@ p { font-size: 16px; color: #465b52; margin: 15px 0 20px 0; }
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #1a1a1a;
-    transition: 0.3s ease;
+    color: var(--link-color);
+    transition: color var(--transition);
 }
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: royalblue;
+    color: var(--accent-color);
 }
 
 #navbar li a.active::after,
 #navbar li a:hover::after {
     content: "";
-    width: 50%;
+    width: 30%;
     height: 2px;
-    background: royalblue;
+    background: var(--accent-color);
     position: absolute;
     bottom: -4px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20px;
+    transition: background-color var(--transition);
 }
 
-/* Mobile Menu */
-#mobile-menu {
-    display: none;
-    font-size: 24px;
+/* 🔆 Theme Toggle Button */
+#theme-toggle {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all var(--transition);
+    margin-left: 10px;
 }
 
-/* Hero Section */
+#theme-toggle:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+#theme-toggle .sun-icon {
+    display: none;
+}
+
+body.dark-mode #theme-toggle .moon-icon {
+    display: none;
+}
+
+body.dark-mode #theme-toggle .sun-icon {
+    display: block;
+}
+
+#mobile {
+    display: none;
+    align-items: center;
+}
+
+#mobile i {
+    color: var(--mobile-icon-color);
+    font-size: 24px;
+    padding-left: 20px;
+    transition: color var(--transition);
+}
+
+#close {
+    display: none;
+}
+
+/* ============ HERO SECTION ============ */
 #hero {
-  position: relative;
-  height: 90vh;
-  background: url(./image/close-up-clock-with-time-change.jpg) center/cover no-repeat;
-  display: flex;
-  align-items: center;
+    background-image: var(--hero-bg-light); /* ✅ Use variable */
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transition: background-image 0.5s ease-in-out;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
+/* Dark mode override */
+body.dark-mode #hero {
+    background-image: var(--hero-bg-dark); /* ✅ Switches on toggle */
 }
 
-.hero-content {
-  position: relative;
-  max-width: 600px;
-  margin-left: 80px;
-  color: white;
+#hero h4,
+#hero h2,
+#hero p {
+    color: var(--hero-overlay-text);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.hero-content h4 {
-  font-size: 14px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  opacity: 0.8;
+#hero h1 {
+    color: var(--accent-color);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
-.hero-content h1 {
-  font-size: 52px;
-  margin: 10px 0;
-  color: #4f7cff;
+#hero button {
+    background: var(--accent-color);
+    color: white;
+    padding: 14px 36px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition);
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #ddd;
+#hero button:hover {
+    background: var(--accent-hover);
 }
 
-.hero-content button {
-  background: #4f7cff;
-  color: white;
-  padding: 14px 36px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.3s ease;
+/* ============ FEATURED SECTION ============ */
+#featured {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.hero-content button:hover {
-  background: #355ad8;
+#featured .fe-box {
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0,0,0,0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    margin: 15px 0;
+    background-color: var(--card-bg);
+    transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
+#featured .fe-box:hover {
+    box-shadow: 10px 10px 54px rgba(70,62,221,0.1);
+}
 
-/* Responsive */
-@media screen and (max-width: 768px) {
-    #header {
-        padding: 15px 20px;
-        flex-wrap: wrap;
+#featured .fe-box img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#featured .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: var(--fe-box-text);
+    background-color: var(--fe-box-bg-1);
+    /* transition: background-color var(--transition), color var(--transition); */
+}
+
+#featured .fe-box:nth-child(2) h6 { background-color: var(--fe-box-bg-2); }
+#featured .fe-box:nth-child(3) h6 { background-color: var(--fe-box-bg-3); }
+#featured .fe-box:nth-child(4) h6 { background-color: var(--fe-box-bg-4); }
+#featured .fe-box:nth-child(5) h6 { background-color: var(--fe-box-bg-5); }
+#featured .fe-box:nth-child(6) h6 { background-color: var(--fe-box-bg-6); }
+
+/* ============ PRODUCT SECTION ============ */
+#product1 {
+    text-align: center;
+}
+
+#product1 .pro-conatiner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    margin: 15px 0;
+    transition: var(--transition);
+    position: relative;
+    background-color: var(--card-bg);
+}
+
+#product1 .pro:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+#product1 .pro img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: var(--input-bg);
+    padding: 10px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color var(--transition);
+}
+
+#product1 .pro:hover img {
+    transform: scale(1.05);
+}
+
+#product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: var(--text-secondary);
+    font-size: 12px;
+    transition: color var(--transition);
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: color var(--transition);
+}
+
+#product1 .pro .des i {
+    font-size: 12px;
+    color: var(--star-color);
+    transition: color var(--transition);
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-color);
+    transition: color var(--transition);
+}
+
+#product1 .pro #tro {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    background-color: var(--cart-btn-bg);
+    color: var(--cart-btn-text);
+    border: 1px solid var(--button-white-border);
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+/* ============ BANNER SECTIONS ============ */
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(./image/banner/b2.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h4,
+#banner h2 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#banner span {
+    color: var(--banner-span);
+}
+
+#sm-banner {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#sm-banner .banner-box {
+    flex: 1 1 48%;
+    height: 50vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner1 { background-image: url(./image/banner/miw-1.jpg); }
+.banner2 { background-image: url(./image/banner/miw-2.jpg); }
+
+#sm-banner h4,
+#sm-banner h2,
+#sm-banner span {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+    gap: 20px;
+}
+
+#banner3 .banner-box {
+    flex: 1 1 32%;
+    height: 30vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-image: url(./image/banner/wiw3.jpg);
+}
+
+#banner3 .banner-box2 { background-image: url(./image/banner/wiw2.jpg); }
+#banner3 .banner-box3 { background-image: url(./image/banner/wiw4.jpg); }
+
+#banner3 h2 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 22px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#banner3 h3 {
+    color: var(--banner-span);
+    font-weight: 800;
+    font-size: 15px;
+}
+
+/* ============ NEWSLETTER ============ */
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(./image/banner/b14.png);
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: var(--newsletter-bg);
+    transition: background-color var(--transition);
+}
+
+#newsletter h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--newsletter-text);
+    transition: color var(--transition);
+}
+
+#newsletter p span {
+    color: var(--highlight-yellow);
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid var(--input-border);
+    outline: none;
+    border-radius: 4px 0 0 4px;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+#newsletter button {
+    height: 3.125rem;
+    padding: 0 1.5em;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 0 4px 4px 0;
+    transition: background-color var(--transition);
+}
+
+#newsletter button:hover {
+    background-color: var(--accent-hover);
+}
+
+/* ============ FOOTER ============ */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--footer-bg);
+    transition: background-color var(--transition);
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo {
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+    color: var(--text-primary);
+    transition: color var(--transition);
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--link-color);
+    margin: 10px;
+    transition: color var(--transition);
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: var(--text-secondary);
+    padding-right: 4px;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+footer .install .row img {
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: var(--link-hover);
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+}
+
+/* ============ MEDIA QUERIES ============ */
+@media (max-width: 799px) {
+    .section-p1 {
+        padding: 40px 40px;
     }
-
+    
     #navbar {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #E3E6F3;
-        margin-top: 10px;
-        padding: 10px 0;
-    }
-
-    #navbar.active {
         display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: var(--mobile-menu-bg);
+        box-shadow: 0 40px 60px rgba(0,0,0,0.03);
+        padding: 80px 0 0 10px;
+        transition: right 0.3s, background-color var(--transition);
     }
-
+    
+    #navbar.active {
+        right: 0px;
+    }
+    
     #navbar li {
-        text-align: center;
-        padding: 10px 0;
+        margin-bottom: 25px;
     }
 
-    #mobile-menu {
-        display: block;
-    }
-
-    #hero {
-        padding: 0 20px;
-        text-align: center;
+    #mobile {
+        display: flex; 
         align-items: center;
     }
 
-    #hero h1, #hero h2, #hero h4 {
-        line-height: normal;
+    #mobile i {
+        color: var(--mobile-icon-color);
+        font-size: 24px;
+        padding-left: 20px;
+        transition: color var(--transition);
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: var(--text-primary);
+        font-size: 24px;
+        transition: color var(--transition);
+    }
+
+    #lg-bag {
+        display: none;
+    }
+
+    #hero {
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 30px;
+    }
+
+    #featured {
+        justify-content: center;
+    }
+
+    #featured .fe-box {
+        margin: 15px 15px;
+    }
+
+    #product1 .pro-conatiner {
+        justify-content: center;
+    }
+
+    #product1 .pro {
+        margin: 15px;
+    }
+
+    #banner {
+        height: 20vh;
+    }
+
+    #sm-banner .banner-box {
+        min-width: 100%;
+        height: 30vh;
+    }
+
+    #banner3 {
+        padding: 0 40px;
+    }
+  
+    #banner3 .banner-box {
+        min-width: 28%;
+    }
+
+    #newsletter .form {
+        width: 60%;
     }
 }
 
-    </style>
+@media (max-width: 477px) {
+    .section-p1 {
+        padding: 20px;
+    }
+   
+    #header {
+        padding: 10px 30px;
+    }
+    
+    h1 { font-size: 38px; }
+    h2 { font-size: 32px; }
+    
+    #hero {
+        padding: 0 20px;
+        background-position: 55%;
+    }
+
+    #featured {
+        justify-content: space-between;
+    }
+    
+    #featured .fe-box {
+        width: 155px;
+        margin: 0 0 15px 0;
+    }
+
+    #product1 .pro {
+        width: 100%;
+    }
+
+    #banner {
+        height: 40vh;
+    }
+
+    #sm-banner .banner-box {
+        height: 40vh;
+    }
+
+    #sm-banner .banner-box2 {
+        margin-top: 20px;
+    }
+
+    #banner3 {
+        padding: 0 20px;
+    }
+
+    #banner3 .banner-box {
+        width: 100%;
+    }
+
+    #newsletter {
+        padding: 40px 20px;
+    }
+    
+    #newsletter .form {
+        width: 100%;
+    }
+
+    footer .copyright {
+        text-align: start;
+    }
+
+    /* Single Product Page */
+    #prodetails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #prodetails .single-pro-image {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    #prodetails .single-pro-details {
+        width: 100%;
+    }
+
+    /* Blog Page */
+    #blog {
+        padding: 100px 20px 0 20px;
+    }
+
+    #blog .blog-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    #blog .blog-details {
+        width: 100%;
+    }
+
+    /* About Page */
+    #about-head {
+        flex-direction: column;
+    }
+    
+    #about-head img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #about-head div {
+        padding-left: 0px;
+    }
+
+    #about-app .video {
+        width: 100%;
+    }
+    
+    /* Contact Page */
+    #contact-details {
+        flex-direction: column;
+    }
+
+    #contact-details .details {
+        width: 100%;
+        margin-bottom: 30%;
+    }
+
+    #contact-details .map {
+        width: 100%;
+    }
+
+    #form-details {
+        margin: 10px;
+        padding: 30px 10px;
+        flex-wrap: wrap;
+    }
+
+    #form-details form {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Cart Page */
+    #cart-add {
+        flex-direction: column;
+    }
+    
+    #coupon {
+        width: 100%;
+    }
+
+    #subtotal {
+        width: 100%;
+        padding: 20px;  
+    }
+}
+</style>
+
 </head>
 <body>
 
-<!-- Header / Navbar -->
-<header id="header">
-  <div class="header-container">
-    <a href="#" class="logo">
-      <img src="./image/logome.png" alt="PayBudz logo" height="70px">
-    </a>
+ <section id="header">
+    <a href="#"><img src="./image/logome.png" alt="" class="logo" height="70px"></a>
 
-    <nav>
-      <ul id="navbar">
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="cart">
-          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+    <div>
+        <div>
+    <ul id="navbar">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        
+        <!-- 🔆 Theme Toggle Button -->
+        <li>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon moon-icon"></i>
+                <i class="fa-solid fa-sun sun-icon"></i>
+            </button>
         </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+    </ul>
+</div>
+    </div>
+    <div id="mobile">
+       <a href="cart.html"><i class="fa-solid fa-cart-shopping"></a></i> 
+       <i id="bar" class="fas fa-outdent"></i>
+    </div>
+ </section>
 
-<section id="hero">
-  <div class="hero-overlay"></div>
+ <section id="hero">
+   <h4>Trade-in-offer</h4>
+   <h2>Super value deals</h2>
+   <h1>On all products</h1>
+   <p>Save more with coupons & up to 70% off!</p>
+   <button>Shop Now</button>
+ </section>
 
-  <div class="hero-content">
-    <h4>Trade-in Offer</h4>
-    <h1>Super Value Deals</h1>
-    <p>On all products — save up to 70% off</p>
-    <button>Shop Now</button>
-  </div>
+<section id="featured" class="section-p1">
+    <div class="fe-box">
+        <img src="./image/featured/f1.png" alt="">
+        <h6>Free Shipping</h6>
+        </div>
+         <div class="fe-box">
+        <img src="./image/featured/f2.png" alt="">
+        <h6>Online Order</h6>
+        </div>
+         <div class="fe-box">
+        <img src="./image/featured/f3.png" alt="">
+        <h6>Save Money</h6>
+        </div>
+         <div class="fe-box">
+        <img src="./image/featured/f4.png" alt="">
+        <h6>Promotions</h6>
+        </div>
+         <div class="fe-box">
+        <img src="./image/featured/f5.png" alt="">
+        <h6>Happy Sell</h6>
+        </div>
+         <div class="fe-box">
+        <img src="./image/featured/f6.png" alt="">
+        <h6>F24/7 Support</h6>
+        </div>
+        
+    
+
 </section>
 
-<script src="script.js"></script>
+<section id="product1" class="section-p1">
+    <h2>featured Product</h2>
+    <p>Collection of New Mordern Designs</p>
+    <div class="pro-conatiner">
+        <div class="pro">
+            <img src="image/products/w1.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w2.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w3.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w4.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w5.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w6.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w7.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/w9.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+    </div>
+
+</section>
+<section id="banner" class="section-m1">
+    <h4>Repair Service</h4>
+    <h2>Up to <span>70% Off</span> on All Watches </h2>
+    <button class="normal">Explore More</button>
+
+</section>
+
+<section id="product1" class="section-p1">
+    <h2>New Arrivals</h2>
+    <p>Collection of New Mordern Designs</p>
+    <div class="pro-conatiner">
+        <div class="pro">
+            <img src="image/products/wn1.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn2.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn3.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn4.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn5.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn6.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn7.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+        <div class="pro">
+            <img src="image/products/wn8.jpg" alt="">
+            <div class="des">
+                <span>S-watch</span>
+                <h5>Apple Smart Watch</h5>
+        <div class="star">
+             <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+             <i class="fa-solid fa-star"></i>
+        </div>
+         <h4>$74</h4>
+        </div>
+           <a href="#"><i class="fa-solid fa-cart-shopping" id="tro"></i></a>
+
+        </div>
+    </div>
+
+</section>
+
+<section id="sm-banner" class="section-p1">
+    <div class="banner-box banner1">
+        <h4>crazy deals</h4>
+        <h2>buy 1 and get free delivery</h2>
+        <span>you can get classical Watches at Paybills</span>
+        <button class="white">Learn More</button>
+    </div>
+
+    <div class="banner-box banner2">
+        <h4>spring/summer</h4>
+        <h2>Upcoming Season</h2>
+        <span>you can get classical Watches at Paybills</span>
+        <button class="white">collections</button>
+    </div>
+</section>
+
+<section id="banner3">
+<div class="banner-box ">
+         <h2>SEASONAL SALES</h2>
+        <h3>Harmattan Collection -50% OFF</h3>
+</div>
+<div class="banner-box  banner-box2 ">
+         <h2>BLACK FRIDAY</h2>
+        <h3>November Collection -50% OFF</h3>
+</div>
+<div class="banner-box banner-box3 ">
+         <h2>DECEMBER SALES</h2>
+        <h3>Detty December Collection -50% OFF</h3>
+</div>
+</section>
+
+<section id="newsletter" class="section-p1 section-m1">
+<div class="newstext">
+  <h4>Sign Up for Newsletters</h4>
+  <p>get E-mail updates about our latest shop and <span>special offers</span></p>
+</div>
+<div class="form">
+ <input type="text" placeholder="Your email address">
+ <button class="normal">Sign up</button>
+</div>
+
+</section>
+
+<footer class="section-p1">
+ <div class="col">
+  <img src="image/logome.png"  class="logo" height="70px">
+  <h4>contact</h4>
+  <p><b>Address:</b> 25, Lanre Mabawonku Street, Iba ,Ojo,Lagos</p>
+  <p><b>Phone:</b>+234 901234567</p>
+  <p><b>Hours:</b>10:00 -18:00 Mon-Sat</p>
+  <div class="follow">
+    <h4>Follow Us</h4>
+    <div class="icon">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </div>
+  </div>
+
+ </div>
+ <div class="col">
+    <h4>About</h4>
+    <a href="#">About Us</a>
+    <a href="#">Delivery Information</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms and Conditions</a>
+    <a href="#">Contact Us</a>
+ </div>
+
+ <div class="col">
+    <h4>My Account</h4>
+    <a href="#">Sign In</a>
+    <a href="#">View Cart</a>
+    <a href="#">My Wishlist</a>
+    <a href="#">Track my Order</a>
+    <a href="#">Help</a>
+ </div>
+
+ <div class="col install">
+    <h4>Install App</h4>
+    <p>From App Store or Google Play</p>
+    <div class="row">
+        <img src="./image/pay/app.jpg" alt="">
+        <img src="./image/pay/play.jpg" alt="">
+    </div>
+    <p>Secured Payment Gateways</p>
+    <img src="./image/pay/pay.png" alt="">
+ </div>
+
+ <div class="copyright">
+    <p>© 2026 Tona Watches. All rights reserved.</p>
+ </div>
+
+</footer>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>
+<script>
+  /* ============ DARK/LIGHT MODE TOGGLE ============ */
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Check for saved preference OR respect OS preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark.matches)) {
+        body.classList.add('dark-mode');
+    }
+    
+    // Toggle on click
+    themeToggle?.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+    
+    // Optional: React to OS theme changes if no manual preference set
+    prefersDark.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            body.classList.toggle('dark-mode', e.matches);
+        }
+    });
+});
+/* ============ HERO IMAGE SWITCHER ============ */
+const hero = document.getElementById('hero');
+const HERO_LIGHT = './image/close-up-clock-with-time-change.jpg';
+const HERO_DARK = './image/whitebghero.jpg';
+
+function updateHeroBackground(isDark) {
+    // Simple fade effect
+    hero.style.transition = 'opacity 0.3s ease';
+    hero.style.opacity = '0.7';
+    
+    setTimeout(() => {
+        hero.style.backgroundImage = `url(${isDark ? HERO_DARK : HERO_LIGHT})`;
+        hero.style.opacity = '1';
+    }, 150);
+}
+
+// Initialize on load
+const isDarkOnLoad = body.classList.contains('dark-mode');
+updateHeroBackground(isDarkOnLoad);
+
+// Update when theme toggles
+themeToggle?.addEventListener('click', () => {
+    const isDark = body.classList.contains('dark-mode');
+    updateHeroBackground(isDark);
+});
+</script>
